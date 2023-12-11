@@ -21,6 +21,6 @@ std::filesystem::copy(my_path_from, my_path_to,.my_options);
 }
 catch(const std::filesystem::filesystem_error& e)
 {
-std::cout<< e.what()<<std::endl;   //Ошибки не отлавливаются, все завершается успешно.
+std::cout<< e.what()<<std::endl;   //
 }
 }
