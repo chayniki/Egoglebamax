@@ -1,26 +1,37 @@
 #include <iostream>
+#include <fstream>
 #include <string>
-#include <filesystem>
 
-int main()
-{
+int main() {
+    std::string filename;
+    std::cout << "Введите имя текстового файла: ";
+    std::cin >> filename;
 
-static std::filesystem::path my_path_from;
-static std::filesystem::path my_path_to;
+    std::ifstream input_file(filename);
+    if (!input_file) {
+        std::cerr << "Ошибка открытия файла!" << std::endl;
+        return 1;
+    }
 
-my_path_from = L"С:\\sprob\\";
-my_path_to =   L"С:\\bezbrob\\2\\";
+    std::string output_filename = "копия_" + filename;
+    std::ofstream output_file(output_filename);
 
+    if (!output_file) {
+        std::cerr << "Ошибка создания копии файла!" << std::endl;
+        return 1;
+    }
 
-std::filesystem::copy_options my_options;
-my_options = std::filesystem::copy_options::none;
+    char ch;
+    while (input_file.get(ch)) {
+        if (ch != ' ') {
+            output_file << ch;
+        }
+    }
 
-try
-{
-std::filesystem::copy(my_path_from, my_path_to,.my_options);
-}
-catch(const std::filesystem::filesystem_error& e)
-{
-std::cout<< e.what()<<std::endl;   //
-}
+    input_file.close();
+    output_file.close();
+
+    std::cout << "Копия файла без пробелов успешно создана!" << std::endl;
+
+    return 0;
 }
