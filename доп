@@ -1,0 +1,37 @@
+Файл "calc.h":
+
+#ifndef CALC_H
+#define CALC_H
+
+int calc(int N);
+
+#endif
+
+Файл "calc.cpp":
+
+#include "calc.h"
+
+int calc(int N) {
+    if (N == 1) {
+        return 1;
+    } else {
+        return calc(N-1) * 5 + 1 - calc(N-1) / 10;
+    }
+}
+
+Файл "main.cpp":
+
+#include <iostream>
+#include "calc.h"
+
+int main() {
+    int N;
+    std::cout « "Введите N: ";
+    std::cin » N;
+
+    int result = calc(N);
+
+    std::cout « "N-ое число последовательности: " « result « std::endl;
+
+    return 0;
+}
