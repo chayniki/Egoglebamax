@@ -34,4 +34,3 @@ int main() {
     std::cout « "N-ое число последовательности: " « result « std::endl;
 
     return 0;
-}
