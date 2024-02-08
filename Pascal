@@ -1,0 +1,18 @@
+program n_1;
+var A:array [1..1000] of integer;
+A,N,i:integer;
+begin
+read(N);
+for i:=1 to N do begin
+A[i]:=0;
+end;
+
+for i:=1 to N do begin
+A[i+1]:=A[i]*5+1-A[i]/10;
+end;
+
+for i:=1 to N do begin
+writeln(A[i+1],’ ‘);
+end;
+
+end.
