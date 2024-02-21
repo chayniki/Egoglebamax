@@ -1,5 +1,5 @@
 program n_1;
-var A:array[1..1000] of real;
+var A:array[1..1000] of integer;
 N,i:integer;
 begin
 N:=1;
@@ -7,7 +7,7 @@ for i:=1 to N do begin
 read(A[i]);
 end;
 for i:=1 to N do begin
-A[i+1]:=A[i]*5+1-A[i]/10;
+A[i+1]:=A[i]*5+1-A[i] div 10;
 end;
 for i:=1 to N do begin
 writeln (A[i+1],' ');
