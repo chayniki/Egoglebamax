@@ -1,16 +1,31 @@
 program n_1;
-var A:array[1..14] of integer;
-N,AN,AN1:integer;
+
+var
+  A  :  array  [1..14]  of  integer;
+  N,  AN,  AN1  :  integer;
+
 begin
-write('введите N от 1 до 14 включительно, N=');
-read(N);
-AN:=0;
-for N:=1 to N do begin
-AN1:=AN*5+1-AN div 10;
-AN:=AN1; 
-end;
-if (N<=14) and (N>=1) then
-writeln('значение элемента A[N+1]=',AN1) 
-else
-writeln('введите другое N в диапазоне от 1 до 14 включительно!');
+
+  write('введите N от 1 до 14 включительно, N=');
+  read(N);
+
+  AN  :=  0;
+
+  for N  :=  1  to  N  do
+  begin
+
+    AN1  :=  AN  *  5  +  1  -  AN  div  10;
+
+    AN  :=  AN1; 
+
+  end;
+
+  if  (N  <=  14)  and  (N  >=  1)  then
+
+    writeln('значение элемента A[N+1]='  ,  AN1) 
+
+  else
+
+    writeln('введите другое N в диапазоне от 1 до 14 включительно!');
+
 end.
