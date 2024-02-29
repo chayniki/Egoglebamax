@@ -1,15 +1,12 @@
 program n_1;
-var A:array[1..1000] of integer;
-N,i:integer;
+var A:array [1..100] of integer:
+N,AN,AN1:integer;
 begin
-N:=1;
-for i:=1 to N do begin
-read(A[i]);
+read(N);
+AN:=0;
+for N:=1 to N do begin
+AN1:=AN*5+1-AN div 10;
+AN:=AN1:
 end;
-for i:=1 to N do begin
-A[i+1]:=A[i]*5+1-A[i] div 10;
-end;
-for i:=1 to N do begin
-writeln (A[i+1],' ');
-end;
+writeln(AN1);
 end.
